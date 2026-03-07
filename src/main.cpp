@@ -31,10 +31,10 @@ void setup()
   k10.initScreen(screen_dir);
   k10.creatCanvas();
   k10.initSDFile();
-  k10.setScreenBackground(0xEADFB5);
+  k10.setScreenBackground(0xebddab);
   k10.canvas->canvasText("Stoic Buddy", 50, 30, 0x8A3F35, k10.canvas->eCNAndENFont24, 12, true);
   philosopher(neutral);
-  k10.canvas->canvasRectangle(20, 230, 205, 80, 0x8A3F35, 0xEADFB5, false);
+  k10.canvas->canvasRectangle(20, 230, 205, 80, 0x8A3F35, 0xebddab, false);
   answer(StoicResponses::greetings[randomgreeting]);
   k10.canvas->updateCanvas();
 }
@@ -283,7 +283,7 @@ void commands()
 
 void philosopher(String emotion)
 {
-  k10.canvas->canvasRectangle(50, 58, 150, 150, 0xEADFB5, 0xEADFB5, true);
+  k10.canvas->canvasRectangle(50, 58, 150, 150, 0xebddab, 0xebddab, true);
   k10.canvas->canvasDrawImage(20, 50, emotion);
   k10.canvas->updateCanvas();
 }
@@ -295,7 +295,7 @@ void answer(String msg)
   String thirdline = "";
   String fourthline = "";
   String fifthline = "";
-  k10.canvas->canvasRectangle(10, 230, 220, 80, 0x8A3F35, 0xEADFB5, true);
+  k10.canvas->canvasRectangle(10, 230, 220, 80, 0x8A3F35, 0xebddab, true);
   for (int i = 0; i < msg.length(); i++)
   {
     if (i < 32)
