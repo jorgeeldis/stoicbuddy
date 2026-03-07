@@ -32,3 +32,39 @@ const String StoicResponses::sadnessrecom[] = {
     "Music is the solution to many things, and having a bad day go to a good one is one of them, play your favorite beat up playlist and think about the good memories.",
     "Text your loved ones—family or close friends—and share how your day went. I'm sure they'll listen and offer support or advice. Go out with them!",
 };
+
+const String StoicResponses::stress[] = {
+    "Remember that you have power over your mind, not outside events. Realize this and you will find strength.",
+    "It is important to understand that anything outside your control cannot be controlled. What you can control is how you think about it.",
+    "Stress often comes from our thoughts. We usually suffer more in our imagination than in reality."
+};
+
+const String StoicResponses::stressrecom[] = {
+    "Promise me you will take a few minutes to rest your mind. Stay away from social media for a while, grab a coffee, and read some literature.",
+    "Try some deep breathing: inhale for 4 seconds, hold for 7, and exhale for 8. This helps calm the nervous system and reduce stress.",
+    "Take a walk and stretch your legs. This helps release tension and endorphins while you listen to some relaxing music."
+};
+
+const String StoicResponses::afraid[] = {
+    "It's okay to be afraid. It makes us human, and it is a natural survival instinct. Sometimes the best thing we can do is conquer our fears step by step.",
+    "Remember that you gain strength, courage, and confidence every time you overcome a fear. Treat this as a challenge and face it.",
+    "I understand how you feel. Fear is a powerful emotion, but remember to never let fear control you."
+};
+
+const String StoicResponses::afraidrecom[] = {
+    "If you want to overcome this fear, create a small hierarchy of challenges. Start with the easiest one and slowly work your way up.",
+    "Try not to avoid your fear. Sometimes it is important to safely confront it so you can learn to cope and realize it may not be as scary as it seems.",
+    "Speak positively to yourself every day. Visualize yourself in a difficult situation and imagine handling it calmly."
+};
+
+const String StoicResponses::angry[] = {
+    "Never let your emotions get the best of you. Delay this feeling as much as you can and give yourself time to think things through.",
+    "Seek perspective. Imagine this event happening to someone else and try to feel sympathy rather than rage.",
+    "Inner control is important. Do not let anger control your actions or your thinking. We are often disturbed by our own view of things."
+};
+
+const String StoicResponses::angryrecom[] = {
+    "Take a timeout. Remove yourself from the situation, step outside your room, take a walk, and get some fresh air.",
+    "Channel this energy into an intense workout like running, jogging, walking, or lifting weights. Even squeezing a stress ball can help.",
+    "Take slow, deep breaths and listen to some of your favorite music. This can help improve your mood and calm your mind."
+};

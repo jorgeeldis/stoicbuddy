@@ -280,22 +280,6 @@ void loop()
     music.playTFCardAudio("S:/furelise.wav");
     idle = 0;
   }
-
-  if (asr.isDetectCmdID(12))
-  {
-    k10.canvas->canvasClear();
-    int randomscare = random(0, 3);
-    int randomscarerecom = random(0, 3);
-    k10.canvas->canvasText("Stoic Buddy", 50, 30, 0x8A3F35, k10.canvas->eCNAndENFont24, 12, true);
-    philosopher(think);
-    answer("Thinking...");
-    delay(1200);
-    philosopher(talking);
-    answer("Here is some music for you to relax. It's one of my favorites, please enjoy. If you want to talk to me again, please restart the device.");
-    delay(1000);
-    philosopher(happy);
-    idle = 0;
-  }
   if (idle == 30)
   {
     k10.canvas->canvasClear();
@@ -322,7 +306,6 @@ void showCommands()
   k10.canvas->canvasText("- I feel unmotivated -", 10, 220, 0x2F3145, k10.canvas->eCNAndENFont16, 23, false);
   k10.canvas->canvasText("- Give me wisdom -", 10, 240, 0x2F3145, k10.canvas->eCNAndENFont16, 19, false);
   k10.canvas->canvasText("- Play music -", 10, 260, 0x2F3145, k10.canvas->eCNAndENFont16, 15, false);
-  k10.canvas->canvasText("- I am scared -", 10, 280, 0x2F3145, k10.canvas->eCNAndENFont16, 16, false);
   k10.canvas->updateCanvas();
 }
 
@@ -339,7 +322,6 @@ void commands()
   asr.addASRCommand(9, "I feel unmotivated");
   asr.addASRCommand(10, "Give me wisdom");
   asr.addASRCommand(11, "Play music");
-  asr.addASRCommand(12, "I am scared");
 }
 
 void philosopher(String emotion)
