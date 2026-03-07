@@ -1,6 +1,6 @@
 #include "StoicResponses.h"
 
-// Try to reach 130 char
+// Try to reach 130 char, not more than 160
 
 const String StoicResponses::greetings[] = {
     "Hello friend. How was your day? How are you feeling? I'm always here to support you and help you navigate both the good moments and the difficult ones.", 

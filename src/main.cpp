@@ -9,6 +9,7 @@ void answer(String msg);
 UNIHIKER_K10 k10;
 Music music;
 uint8_t screen_dir = 2;
+int idle = 0;
 ASR asr;
 String neutral = "S:/philosopher192x192.png";
 String happy = "S:/philosopherhappy192x192.png";
@@ -17,6 +18,7 @@ String sleeping = "S:/philosophersleeping192x192.png";
 String talking = "S:/philosophertalking192x192.png";
 String think = "S:/philosopherthink192x192.png";
 bool musicStop = false;
+bool sleepingstate = false;
 
 void setup()
 {
@@ -38,6 +40,8 @@ void setup()
 }
 void loop()
 {
+  idle++;
+  delay(1000);
   if (asr.isDetectCmdID(1))
   {
     int randomhappy = random(0, 3);
@@ -52,6 +56,7 @@ void loop()
     delay(1000);
     answer("Is there anything else you want to talk about?");
     philosopher(happy);
+    idle = 0;
   }
 
   if (asr.isDetectCmdID(2))
@@ -70,6 +75,7 @@ void loop()
     delay(1000);
     answer("Is there anything else you want to talk about?");
     philosopher(sad);
+    idle = 0;
   }
 
   if (asr.isDetectCmdID(3))
@@ -88,6 +94,7 @@ void loop()
     delay(1000);
     answer("Is there anything else you want to talk about?");
     philosopher(think);
+    idle = 0;
   }
 
   if (asr.isDetectCmdID(4))
@@ -106,6 +113,7 @@ void loop()
     delay(1000);
     answer("Is there anything else you want to talk about?");
     philosopher(think);
+    idle = 0;
   }
 
   if (asr.isDetectCmdID(5))
@@ -124,6 +132,7 @@ void loop()
     delay(1000);
     answer("Is there anything else you want to talk about?");
     philosopher(sad);
+    idle = 0;
   }
 
   if (asr.isDetectCmdID(6))
@@ -142,6 +151,7 @@ void loop()
     delay(1000);
     answer("Is there anything else you want to talk about?");
     philosopher(think);
+    idle = 0;
   }
 
   if (asr.isDetectCmdID(7))
@@ -160,6 +170,7 @@ void loop()
     delay(1000);
     answer("Is there anything else you want to talk about?");
     philosopher(happy);
+    idle = 0;
   }
 
   if (asr.isDetectCmdID(8))
@@ -179,6 +190,7 @@ void loop()
     delay(1000);
     answer("Is there anything else you want to talk about?");
     philosopher(think);
+    idle = 0;
   }
 
   if (asr.isDetectCmdID(9))
@@ -197,6 +209,7 @@ void loop()
     delay(1000);
     answer("Is there anything else you want to talk about?");
     philosopher(think);
+    idle = 0;
   }
 
   if (asr.isDetectCmdID(10))
@@ -215,6 +228,7 @@ void loop()
     delay(1000);
     answer("Is there anything else you want to talk about?");
     philosopher(happy);
+    idle = 0;
   }
 
   if (asr.isDetectCmdID(11))
@@ -227,6 +241,7 @@ void loop()
     delay(1000);
     philosopher(happy);
     music.playTFCardAudio("S:/furelise.wav");
+    idle = 0;
   }
 
   if (asr.isDetectCmdID(12))
@@ -240,7 +255,13 @@ void loop()
     answer("Here is some music for you to relax. It's one of my favorites, please enjoy. If you want to talk to me again, please restart the device.");
     delay(1000);
     philosopher(happy);
-    music.playTFCardAudio("S:/furelise.wav");
+    idle = 0;
+  }
+  if (idle > 30)
+  {
+    sleepingstate = true;
+    philosopher(sleeping);
+    answer("Zzz...");
   }
 }
 
@@ -280,31 +301,31 @@ void answer(String msg)
     if (i < 32)
     {
       firstline += msg[i];
-      k10.canvas->canvasText(firstline, 30, 235, 0x2F3145, Canvas::eCNAndENFont16, 34, false);
+      k10.canvas->canvasText(firstline, 20, 235, 0x2F3145, Canvas::eCNAndENFont16, 34, false);
       k10.canvas->updateCanvas();
     }
     else if (i >= 32 && i < 64)
     {
       secondline += msg[i];
-      k10.canvas->canvasText(secondline, 30, 248, 0x2F3145, Canvas::eCNAndENFont16, 34, false);
+      k10.canvas->canvasText(secondline, 20, 248, 0x2F3145, Canvas::eCNAndENFont16, 34, false);
       k10.canvas->updateCanvas();
     }
     else if (i >= 64 && i < 96)
     {
       thirdline += msg[i];
-      k10.canvas->canvasText(thirdline, 30, 261, 0x2F3145, Canvas::eCNAndENFont16, 34, false);
+      k10.canvas->canvasText(thirdline, 20, 261, 0x2F3145, Canvas::eCNAndENFont16, 34, false);
       k10.canvas->updateCanvas();
     }
     else if (i >= 96 && i < 128)
     {
       fourthline += msg[i];
-      k10.canvas->canvasText(fourthline, 30, 274, 0x2F3145, Canvas::eCNAndENFont16, 34, false);
+      k10.canvas->canvasText(fourthline, 20, 274, 0x2F3145, Canvas::eCNAndENFont16, 34, false);
       k10.canvas->updateCanvas();
     }
     else if (i >= 128 && i < 160)
     {
       fifthline += msg[i];
-      k10.canvas->canvasText(fifthline, 30, 287, 0x2F3145, Canvas::eCNAndENFont16, 34, false);
+      k10.canvas->canvasText(fifthline, 20, 287, 0x2F3145, Canvas::eCNAndENFont16, 34, false);
       k10.canvas->updateCanvas();
     }
   }
