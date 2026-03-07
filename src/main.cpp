@@ -45,6 +45,17 @@ void loop()
   {
     showCommands();
   }
+  if ((k10.buttonB->isPressed()))
+  {
+    idle = 0;
+    int randomgreeting = random(0, 3);
+    k10.canvas->canvasClear();
+    k10.canvas->canvasText("Stoic Buddy", 50, 30, 0x8A3F35, k10.canvas->eCNAndENFont24, 12, true);
+    philosopher(neutral);
+    k10.canvas->canvasRectangle(20, 230, 205, 80, 0x8A3F35, 0xebddab, false);
+    answer(StoicResponses::greetings[randomgreeting]);
+    k10.canvas->updateCanvas();
+  }
   idle++;
   delay(1000);
   if (asr.isDetectCmdID(1))
