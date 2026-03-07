@@ -274,7 +274,7 @@ void answer(String msg)
   String thirdline = "";
   String fourthline = "";
   String fifthline = "";
-  k10.canvas->canvasRectangle(20, 230, 205, 80, 0x8A3F35, 0xEADFB5, true);
+  k10.canvas->canvasRectangle(10, 230, 220, 80, 0x8A3F35, 0xEADFB5, true);
   for (int i = 0; i < msg.length(); i++)
   {
     if (i < 32)
