@@ -5,6 +5,7 @@
 void commands();
 void philosopher(String emotion);
 void answer(String msg);
+void showCommands();
 
 UNIHIKER_K10 k10;
 Music music;
@@ -40,12 +41,18 @@ void setup()
 }
 void loop()
 {
+  if ((k10.buttonA->isPressed()))
+  {
+    showCommands();
+  }
   idle++;
   delay(1000);
   if (asr.isDetectCmdID(1))
   {
+    k10.canvas->canvasClear();
     int randomhappy = random(0, 3);
     int randomhappyrecom = random(0, 3);
+    k10.canvas->canvasText("Stoic Buddy", 50, 30, 0x8A3F35, k10.canvas->eCNAndENFont24, 12, true);
     philosopher(think);
     answer("Thinking...");
     delay(1200);
@@ -61,8 +68,10 @@ void loop()
 
   if (asr.isDetectCmdID(2))
   {
+    k10.canvas->canvasClear();
     int randomsadness = random(0, 3);
     int randomsadnessrecom = random(0, 3);
+    k10.canvas->canvasText("Stoic Buddy", 50, 30, 0x8A3F35, k10.canvas->eCNAndENFont24, 12, true);
     philosopher(think);
     answer("Thinking...");
     delay(1200);
@@ -80,8 +89,10 @@ void loop()
 
   if (asr.isDetectCmdID(3))
   {
+    k10.canvas->canvasClear();
     int randomstress = random(0, 3);
     int randomstressrecom = random(0, 3);
+    k10.canvas->canvasText("Stoic Buddy", 50, 30, 0x8A3F35, k10.canvas->eCNAndENFont24, 12, true);
     philosopher(think);
     answer("Thinking...");
     delay(1200);
@@ -99,8 +110,10 @@ void loop()
 
   if (asr.isDetectCmdID(4))
   {
+    k10.canvas->canvasClear();
     int randomafraid = random(0, 3);
     int randomafraidrecom = random(0, 3);
+    k10.canvas->canvasText("Stoic Buddy", 50, 30, 0x8A3F35, k10.canvas->eCNAndENFont24, 12, true);
     philosopher(think);
     answer("Thinking...");
     delay(1200);
@@ -118,8 +131,10 @@ void loop()
 
   if (asr.isDetectCmdID(5))
   {
+    k10.canvas->canvasClear();
     int randomangry = random(0, 3);
     int randomangryrecom = random(0, 3);
+    k10.canvas->canvasText("Stoic Buddy", 50, 30, 0x8A3F35, k10.canvas->eCNAndENFont24, 12, true);
     philosopher(think);
     answer("Thinking...");
     delay(1200);
@@ -137,8 +152,10 @@ void loop()
 
   if (asr.isDetectCmdID(6))
   {
+    k10.canvas->canvasClear();
     int randomoverwhelmed = random(0, 3);
     int randomoverwhelmedrecom = random(0, 3);
+    k10.canvas->canvasText("Stoic Buddy", 50, 30, 0x8A3F35, k10.canvas->eCNAndENFont24, 12, true);
     philosopher(think);
     answer("Thinking...");
     delay(1200);
@@ -156,8 +173,10 @@ void loop()
 
   if (asr.isDetectCmdID(7))
   {
+    k10.canvas->canvasClear();
     int randommistake = random(0, 3);
     int randommistakerecom = random(0, 3);
+    k10.canvas->canvasText("Stoic Buddy", 50, 30, 0x8A3F35, k10.canvas->eCNAndENFont24, 12, true);
     philosopher(think);
     answer("Thinking...");
     delay(1200);
@@ -175,9 +194,10 @@ void loop()
 
   if (asr.isDetectCmdID(8))
   {
+    k10.canvas->canvasClear();
     int randomnocontrol = random(0, 3);
     int randomnocontrolrecom = random(0, 3);
-
+    k10.canvas->canvasText("Stoic Buddy", 50, 30, 0x8A3F35, k10.canvas->eCNAndENFont24, 12, true);
     philosopher(think);
     answer("Thinking...");
     delay(1200);
@@ -195,8 +215,10 @@ void loop()
 
   if (asr.isDetectCmdID(9))
   {
+    k10.canvas->canvasClear();
     int randomunmotivated = random(0, 3);
     int randomunmotivatedrecom = random(0, 3);
+    k10.canvas->canvasText("Stoic Buddy", 50, 30, 0x8A3F35, k10.canvas->eCNAndENFont24, 12, true);
     philosopher(think);
     answer("Thinking...");
     delay(1200);
@@ -214,8 +236,10 @@ void loop()
 
   if (asr.isDetectCmdID(10))
   {
+    k10.canvas->canvasClear();
     int randomwisdom = random(0, 3);
     int randomwisdomrecom = random(0, 3);
+    k10.canvas->canvasText("Stoic Buddy", 50, 30, 0x8A3F35, k10.canvas->eCNAndENFont24, 12, true);
     philosopher(think);
     answer("Thinking...");
     delay(1200);
@@ -233,6 +257,8 @@ void loop()
 
   if (asr.isDetectCmdID(11))
   {
+    k10.canvas->canvasClear();
+    k10.canvas->canvasText("Stoic Buddy", 50, 30, 0x8A3F35, k10.canvas->eCNAndENFont24, 12, true);
     philosopher(think);
     answer("Thinking...");
     delay(1200);
@@ -246,8 +272,10 @@ void loop()
 
   if (asr.isDetectCmdID(12))
   {
+    k10.canvas->canvasClear();
     int randomscare = random(0, 3);
     int randomscarerecom = random(0, 3);
+    k10.canvas->canvasText("Stoic Buddy", 50, 30, 0x8A3F35, k10.canvas->eCNAndENFont24, 12, true);
     philosopher(think);
     answer("Thinking...");
     delay(1200);
@@ -257,12 +285,34 @@ void loop()
     philosopher(happy);
     idle = 0;
   }
-  if (idle > 30)
+  if (idle == 30)
   {
+    k10.canvas->canvasClear();
+    k10.canvas->canvasText("Stoic Buddy", 50, 30, 0x8A3F35, k10.canvas->eCNAndENFont24, 12, true);
     sleepingstate = true;
     philosopher(sleeping);
     answer("Zzz...");
   }
+}
+
+void showCommands()
+{
+  idle = 0;
+  k10.canvas->canvasClear();
+  k10.canvas->canvasText("Commands", 10, 30, 0x8A3F35, k10.canvas->eCNAndENFont24, 9, false);
+  k10.canvas->canvasText("- I am happy -", 10, 60, 0x2F3145, k10.canvas->eCNAndENFont16, 15, false);
+  k10.canvas->canvasText("- I am sad -", 10, 80, 0x2F3145, k10.canvas->eCNAndENFont16, 13, false);
+  k10.canvas->canvasText("- I am stressed -", 10, 100, 0x2F3145, k10.canvas->eCNAndENFont16, 18, false);
+  k10.canvas->canvasText("- I am afraid -", 10, 120, 0x2F3145, k10.canvas->eCNAndENFont16, 16, false);
+  k10.canvas->canvasText("- I am angry -", 10, 140, 0x2F3145, k10.canvas->eCNAndENFont16, 15, false);
+  k10.canvas->canvasText("- I am overwhelmed -", 10, 160, 0x2F3145, k10.canvas->eCNAndENFont16, 21, false);
+  k10.canvas->canvasText("- I made a mistake -", 10, 180, 0x2F3145, k10.canvas->eCNAndENFont16, 21, false);
+  k10.canvas->canvasText("- I cannot control -", 10, 200, 0x2F3145, k10.canvas->eCNAndENFont16, 21, false);
+  k10.canvas->canvasText("- I feel unmotivated -", 10, 220, 0x2F3145, k10.canvas->eCNAndENFont16, 23, false);
+  k10.canvas->canvasText("- Give me wisdom -", 10, 240, 0x2F3145, k10.canvas->eCNAndENFont16, 19, false);
+  k10.canvas->canvasText("- Play music -", 10, 260, 0x2F3145, k10.canvas->eCNAndENFont16, 15, false);
+  k10.canvas->canvasText("- I am scared -", 10, 280, 0x2F3145, k10.canvas->eCNAndENFont16, 16, false);
+  k10.canvas->updateCanvas();
 }
 
 void commands()
@@ -274,7 +324,7 @@ void commands()
   asr.addASRCommand(5, "I am angry");
   asr.addASRCommand(6, "I am overwhelmed");
   asr.addASRCommand(7, "I made a mistake");
-  asr.addASRCommand(8, "I cannot control this");
+  asr.addASRCommand(8, "I cannot control");
   asr.addASRCommand(9, "I feel unmotivated");
   asr.addASRCommand(10, "Give me wisdom");
   asr.addASRCommand(11, "Play music");
