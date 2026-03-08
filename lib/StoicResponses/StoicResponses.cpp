@@ -80,3 +80,35 @@ const String StoicResponses::overwhelmedrecom[] = {
     "Instead of being paralyzed and doing nothing, focus on the absolute smallest step you can take right now. Start there and build up toward your final task.",
     "When you feel overwhelmed, pause to regain composure rather than acting impulsively. Listen to some calm music, go for a walk, and leave your smartphone at home."
 };
+
+const String StoicResponses::mistake[] = {
+
+};
+
+const String StoicResponses::mistakerecom[] = {
+
+};
+
+const String StoicResponses::nocontrol[] = {
+
+};
+
+const String StoicResponses::nocontrolrecom[] = {
+
+};
+
+const String StoicResponses::unmotivated[] = {
+
+};
+
+const String StoicResponses::unmotivatedrecom[] = {
+
+};
+
+const String StoicResponses::wisdom[] = {
+
+};
+
+const String StoicResponses::wisdomrecom[] = {
+
+};
