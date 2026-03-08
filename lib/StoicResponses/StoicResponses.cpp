@@ -68,3 +68,15 @@ const String StoicResponses::angryrecom[] = {
     "Channel this energy into an intense workout like running, jogging, walking, or lifting weights. Even squeezing a stress ball can help.",
     "Take slow, deep breaths and listen to some of your favorite music. This can help improve your mood and calm your mind."
 };
+
+const String StoicResponses::overwhelmed[] = {
+    "I know the feeling. Everything seems to be piling up, and you don't know what to do. Let's pause for a moment and simply be in the present.",
+    "It's completely normal to feel overwhelmed. This often happens because of overthinking and having many tasks at once. Keep the following in mind:",
+    "Humans tend to have limits, even when thinking. It's important to keep this in mind when feeling overwhelmed. You need to pause what you're doing for a minute"
+};
+
+const String StoicResponses::overwhelmedrecom[] = {
+    "Divide your worries into what you can control (your thoughts, actions, and responses) and what you cannot (other people, outcomes, and the past). Discard the latter.",
+    "Instead of being paralyzed and doing nothing, focus on the absolute smallest step you can take right now. Start there and build up toward your final task.",
+    "When you feel overwhelmed, pause to regain composure rather than acting impulsively. Listen to some calm music, go for a walk, and leave your smartphone at home."
+};
