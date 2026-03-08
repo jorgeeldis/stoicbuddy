@@ -9,17 +9,17 @@ void showCommands();
 
 UNIHIKER_K10 k10;
 Music music;
+ASR asr;
 uint8_t screen_dir = 2;
 int idle = 0;
-ASR asr;
+bool musicStop = false;
+bool sleepingstate = false;
 String neutral = "S:/philosopher192x192.png";
 String happy = "S:/philosopherhappy192x192.png";
 String sad = "S:/philosophersad192x192.png";
 String sleeping = "S:/philosophersleeping192x192.png";
 String talking = "S:/philosophertalking192x192.png";
 String think = "S:/philosopherthink192x192.png";
-bool musicStop = false;
-bool sleepingstate = false;
 
 void setup()
 {
@@ -41,6 +41,8 @@ void setup()
 }
 void loop()
 {
+  idle++;
+  delay(1000);
   if ((k10.buttonA->isPressed()))
   {
     showCommands();
@@ -56,8 +58,6 @@ void loop()
     answer(StoicResponses::greetings[randomgreeting]);
     k10.canvas->updateCanvas();
   }
-  idle++;
-  delay(1000);
   if (asr.isDetectCmdID(1))
   {
     k10.canvas->canvasClear();
@@ -87,11 +87,9 @@ void loop()
     answer("Thinking...");
     delay(1200);
     philosopher(talking);
-    answer("I understand that sadness can visit us sometimes.");
+    answer(StoicResponses::sadness[randomsadness]);
     delay(1000);
-    answer("Remember that emotions change with time, like clouds passing in the sky.");
-    delay(1000);
-    answer("Try to focus on one small thing you can do today that is within your control.");
+    answer(StoicResponses::sadnessrecom[randomsadnessrecom]);
     delay(1000);
     answer("Is there anything else you want to talk about?");
     philosopher(sad);
@@ -108,11 +106,9 @@ void loop()
     answer("Thinking...");
     delay(1200);
     philosopher(talking);
-    answer("Stress often appears when our mind tries to solve everything at once.");
+    answer(StoicResponses::stress[randomstress]);
     delay(1000);
-    answer("Take a slow breath and focus only on the next step you can take.");
-    delay(1000);
-    answer("Small actions, done calmly, can solve many problems.");
+    answer(StoicResponses::stressrecom[randomstressrecom]);
     delay(1000);
     answer("Is there anything else you want to talk about?");
     philosopher(think);
@@ -129,11 +125,9 @@ void loop()
     answer("Thinking...");
     delay(1200);
     philosopher(talking);
-    answer("Fear often comes from imagining the future.");
+    answer(StoicResponses::afraid[randomafraid]);
     delay(1000);
-    answer("Bring your attention back to the present moment.");
-    delay(1000);
-    answer("Ask yourself what part of this situation you can influence.");
+    answer(StoicResponses::afraidrecom[randomafraidrecom]);
     delay(1000);
     answer("Is there anything else you want to talk about?");
     philosopher(think);
@@ -150,11 +144,9 @@ void loop()
     answer("Thinking...");
     delay(1200);
     philosopher(talking);
-    answer("Anger is powerful, but it does not need to guide your actions.");
+    answer(StoicResponses::angry[randomangry]);
     delay(1000);
-    answer("Take a moment to pause before responding.");
-    delay(1000);
-    answer("A calm mind allows you to choose the wiser path.");
+    answer(StoicResponses::angryrecom[randomangryrecom]);
     delay(1000);
     answer("Is there anything else you want to talk about?");
     philosopher(sad);
@@ -171,11 +163,9 @@ void loop()
     answer("Thinking...");
     delay(1200);
     philosopher(talking);
-    answer("When everything feels overwhelming, it helps to slow down.");
+    answer(StoicResponses::overwhelmed[randomoverwhelmed]);
     delay(1000);
-    answer("Focus on one task, one breath, one moment at a time.");
-    delay(1000);
-    answer("Progress is built from small and steady steps.");
+    answer(StoicResponses::overwhelmedrecom[randomoverwhelmedrecom]);
     delay(1000);
     answer("Is there anything else you want to talk about?");
     philosopher(think);
@@ -192,11 +182,9 @@ void loop()
     answer("Thinking...");
     delay(1200);
     philosopher(talking);
-    answer("Mistakes are part of learning and growth.");
+    answer(StoicResponses::mistake[randommistake]);
     delay(1000);
-    answer("Every experience can teach us something valuable.");
-    delay(1000);
-    answer("Reflect on what you learned and move forward stronger.");
+    answer(StoicResponses::mistakerecom[randommistakerecom]);
     delay(1000);
     answer("Is there anything else you want to talk about?");
     philosopher(happy);
@@ -213,11 +201,9 @@ void loop()
     answer("Thinking...");
     delay(1200);
     philosopher(talking);
-    answer("Some things are outside our control.");
+    answer(StoicResponses::nocontrol[randomnocontrol]);
     delay(1000);
-    answer("Peace comes when we accept this and focus on our actions.");
-    delay(1000);
-    answer("Direct your energy to what you can influence.");
+    answer(StoicResponses::nocontrolrecom[randomnocontrolrecom]);
     delay(1000);
     answer("Is there anything else you want to talk about?");
     philosopher(think);
@@ -234,11 +220,9 @@ void loop()
     answer("Thinking...");
     delay(1200);
     philosopher(talking);
-    answer("Motivation can come and go.");
+    answer(StoicResponses::unmotivated[randomunmotivated]);
     delay(1000);
-    answer("Discipline means taking action even when motivation is quiet.");
-    delay(1000);
-    answer("Start with one small task and build momentum.");
+    answer(StoicResponses::unmotivatedrecom[randomunmotivatedrecom]);
     delay(1000);
     answer("Is there anything else you want to talk about?");
     philosopher(think);
@@ -255,11 +239,9 @@ void loop()
     answer("Thinking...");
     delay(1200);
     philosopher(talking);
-    answer("Here is a piece of wisdom for today.");
+    answer(StoicResponses::wisdom[randomwisdom]);
     delay(1000);
-    answer("You have control over your thoughts and actions.");
-    delay(1000);
-    answer("Focus on those, and let the rest unfold naturally.");
+    answer(StoicResponses::wisdomrecom[randomwisdomrecom]);
     delay(1000);
     answer("Is there anything else you want to talk about?");
     philosopher(happy);
@@ -280,6 +262,7 @@ void loop()
     music.playTFCardAudio("S:/furelise.wav");
     idle = 0;
   }
+
   if (idle == 30)
   {
     k10.canvas->canvasClear();
