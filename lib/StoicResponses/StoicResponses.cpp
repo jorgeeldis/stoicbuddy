@@ -82,11 +82,15 @@ const String StoicResponses::overwhelmedrecom[] = {
 };
 
 const String StoicResponses::mistake[] = {
-
+    "Let me tell you something: mistakes don't define who you are. What matters is getting up and fixing them with the best attitude possible. Believe this, and you'll be okay.",
+    "You must take responsibility for the actions you take. Even if you make a mistake, what matters is that you learn from it so you don't repeat it again.",
+    "Mistakes are part of the healthy lifestyle of someone who is trying. You'll gain wisdom by learning from them and grow into a better human being."
 };
 
 const String StoicResponses::mistakerecom[] = {
-
+    "Let's analyze the cause of your mistake, its root, and how the impact affects you or your environment. With this information, you can work toward a solution.",
+    "Sometimes it's good to seek feedback from a close friend or a colleague. Perspectives outside your own are valuable when analyzing a situation."
+    "Avoid self-blame and be compassionate with yourself. Don't treat yourself too harshly, everyone makes mistakes, and you will learn from them."
 };
 
 const String StoicResponses::nocontrol[] = {
