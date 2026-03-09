@@ -94,11 +94,15 @@ const String StoicResponses::mistakerecom[] = {
 };
 
 const String StoicResponses::nocontrol[] = {
-
+    "It’s important to know what we have control over and what we don’t. You can control your emotions, actions, and thoughts, anything else is external.",
+    "Don’t let external sources dictate your life. What happens outside your control should not affect your emotions. Even though it’s difficult, once you realize this, you can gain control over your mind.",
+    "A Stoic acts like an archer: they train, take aim, and shoot with maximum skill, but accept that a sudden gust of wind (external factors) may cause them to miss the target."
 };
 
 const String StoicResponses::nocontrolrecom[] = {
-
+    "Let’s practice this: grab a notebook and write all the things you have control over on one side, and the things you don’t have control over on the other side.",
+    "Walk out your emotions, sometimes we think we have control over external things, but we have to let these actions pass through and don't let us affect our life.",
+    "Practice some deep breathing techniques to let those unwanted thoughts pass. Many things we cannot control try to affect us, so stop what you’re doing and take a moment to practice some breathing techniques"
 };
 
 const String StoicResponses::unmotivated[] = {
