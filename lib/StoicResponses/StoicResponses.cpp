@@ -106,11 +106,15 @@ const String StoicResponses::nocontrolrecom[] = {
 };
 
 const String StoicResponses::unmotivated[] = {
-
+    "Life is full of ups and downs, and days when we feel unmotivated are completely normal. It is important to keep our discipline strong.",
+    "We should not depend on motivation to push ourselves to do things. Discipline is what makes us do the things we sometimes feel we don’t want to do.",
+    "Feeling like this is normal. However, you should get up and try once again. You can rest and take a few minutes to think, but once you’re done, you must push through."
 };
 
 const String StoicResponses::unmotivatedrecom[] = {
-
+    "Make sure you rest today. Keep this day free from work and think about what to do in these scenarios, so that the next time you feel like this again, you can use your discipline in your favor.",
+    "Write down your why, connect with your deeper purpose or values, which helps sustain motivation even when tasks are challenging.",
+    "Let's make a routine, grab a notebook and try to build consistency to turn actions into habits, reducing the need for constant motivation."
 };
 
 const String StoicResponses::wisdom[] = {
