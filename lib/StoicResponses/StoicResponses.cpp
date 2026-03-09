@@ -118,9 +118,13 @@ const String StoicResponses::unmotivatedrecom[] = {
 };
 
 const String StoicResponses::wisdom[] = {
-
+    "If you want to be happy, do not desire that things happen as you wish, but wish that they happen as they do. - Epictetus",
+    "Life is very short and anxious for those who forget the past, neglect the present, and fear the future. - Seneca",
+    "You have power over your mind, not outside events. Realize this, and you will find strength. - Marcus Aurelius"
 };
 
 const String StoicResponses::wisdomrecom[] = {
-
+    "If you wish to find more motivation, i recommend you to read the following book: Meditations by Marcus Aurelius.",
+    "If you wish to find more motivation, i recommend you to read the following book: Letters from a Stoic by Seneca.",
+    "If you wish to find more motivation, i recommend you to read the following book: Discourses, Fragments, Handbook by Epictetus."
 };
